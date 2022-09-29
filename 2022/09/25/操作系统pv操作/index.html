@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="时间复杂度最小的 组合数求法, Wufeng&#39;s Bolg">
-    <meta name="description" content="求组合数算法">
+    <meta name="keywords" content="PV操作, Wufeng&#39;s Bolg">
+    <meta name="description" content="PV操作">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>时间复杂度最小的 组合数求法 | Wufeng&#39;s Bolg</title>
+    <title>PV操作 | Wufeng&#39;s Bolg</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -339,7 +339,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">时间复杂度最小的 组合数求法</h1>
+                    <h1 class="description center-align post-title">PV操作</h1>
                 </div>
             </div>
         </div>
@@ -363,12 +363,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">算法</span>
+                            <a href="/tags/PV%E6%93%8D%E4%BD%9C/">
+                                <span class="chip bg-color">PV操作</span>
                             </a>
                         
-                            <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0/">
-                                <span class="chip bg-color">组合数</span>
+                            <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                                <span class="chip bg-color">操作系统</span>
                             </a>
                         
                     </div>
@@ -379,8 +379,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                算法
+                            <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="post-category">
+                                操作系统
                             </a>
                         
                     </div>
@@ -392,7 +392,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-09-01
+                    2022-09-25
                 </div>
                 
 
@@ -413,34 +413,77 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="最快且最快范围求组合数"><a href="#最快且最快范围求组合数" class="headerlink" title="最快且最快范围求组合数"></a>最快且最快范围求组合数</h2><pre class=" language-c"><code class="language-c">
+                <h2 id="最详细pv操作"><a href="#最详细pv操作" class="headerlink" title="最详细pv操作"></a>最详细pv操作</h2><pre class=" language-html"><code class="language-html">
 
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
-using namespace std<span class="token punctuation">;</span>
-<span class="token keyword">typedef</span> <span class="token keyword">long</span> <span class="token keyword">long</span> ll<span class="token punctuation">;</span>
 
-ll res<span class="token punctuation">[</span><span class="token number">67</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">67</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+操作系统中四步法实现PV操作
 
-ll <span class="token function">C</span><span class="token punctuation">(</span>ll n<span class="token punctuation">,</span>ll m<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    
-    <span class="token keyword">if</span><span class="token punctuation">(</span>m<span class="token operator">==</span><span class="token number">0</span> <span class="token operator">||</span> m<span class="token operator">==</span>n<span class="token punctuation">)</span> 
-        <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>res<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">[</span>m<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> res<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        
-    <span class="token keyword">return</span> res<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">[</span>m<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">C</span><span class="token punctuation">(</span>n<span class="token number">-1</span><span class="token punctuation">,</span>m<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">C</span><span class="token punctuation">(</span>n<span class="token number">-1</span><span class="token punctuation">,</span>m<span class="token number">-1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment" spellcheck="true">//¸³Öµ¸øres[n][m]²¢·µ»Ø</span>
-    
-<span class="token punctuation">}</span>
+                                        原作者：信息科学技术系  常静
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    ll a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> result<span class="token punctuation">;</span>
-    cin<span class="token operator">>></span>a<span class="token operator">>></span>b<span class="token punctuation">;</span>
-    result <span class="token operator">=</span> <span class="token function">C</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    cout<span class="token operator">&lt;&lt;</span>result<span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+操作系统中，为了避免进程的死锁，给出了一种有效的控制算法----PV操作。PV操作是一种在利用PV操作实现进程的同步与互斥时，确保进程不会产生死锁和错误的算法。同学们在学习之初往往不知如何下手，如何确定信号量，如何确定进程是同步还是互斥，首要解决的问题就是准确无误地理解PV原语的意义。
+1 PV原语的含义：
+P操作和V操作是不可中断的程序段，称为原语。PV原语及信号量的概念都是由荷兰科学家E.W.Dijkstra提出的。
+P原语操作的意义是：
+（1）信号量减1；
+（2）若信号量减1后仍大于或等于零，则进程继续执行；
+（3）若信号量减1后小于零，则该进程被阻塞后进入与该信号相对应的队列中，然后转进程调度。
+V原语操作的意义是：
+（1）信号量加1；
+（2）若相加结果大于零，则进程继续执行；
+（3）若相加结果小于或等于零，则从该信号的等待队列中唤醒一等待进程，然后再返回原进程继续执行或转进程调度。
+PV操作对于每一个进程来说，都只能进行一次，而且必须成对使用。在PV原语执行期间不允许有中断发生。其中最容易被忽略的是V操作的第三步，当相加结果小于等于零，不但要继续执行本进程，还要从该信号的等待队列中唤醒一等待进程，这点比较容易出错。
+2 PV操作在进程同步中的意义
+进程同步包括进程互斥和进程同步两个方面，是操作系统管理共享资源的一种手段。用Ｐ、Ｖ操作解决进程同步问题时首先应确定问题是属于进程互斥还是进程同步，或是互斥与同步的混合问题。
+在互斥中，P操作的意义是判断是否能进入临界区，申请资源；V操作的意义是退出临界区，释放资源；信号量初值一般设置为资源的可用个数。
+在同步中，P操作的意义是接受发来的信息、通知，表示可以执行；V操作的意义是发送消息、通知，告知对方。
+并且PV操作必须成对出现，在进程的互斥问题中，它们应成对出现在同一进程中；当遇到进程同步问题时，虽然也成对出现，但P操作应在等待消息的进程中，V操作应在发送消息的进程中，只有在含有V操作的进程发送消息之后，P操作的进程才能执行。
+信号量是一整数，信号量大于等于零时代表可供并发进程使用的资源实体数，但信号量小于零时则表示正在等待使用临界区的进程数。
+3 实现PV的四步法
+第一步确定进程的个数以及进程间关系，这一步非常重要，如果这步理解不准确，则以下都将是错误的。进程的个数主要看题目中需要PV控制的事件有多少个，则进程个数就为几。进程间的关系主要指是进程同步还是进程互斥，它决定了PV操作在进程中的意义，进程的互斥往往是进程间的顺序推进，而进程的同步是多个进程间的协同工作，具有并发性。      
+第二步设置信号量的个数，一般情况下，在进程互斥中，信号量都为一个；在同步中，要根据进程间的同步关系来设置信号量的个数, 有一个也可能是多个。
+第三步画出工作流程图，流程图的正确性是清楚理解题意的最好反映，也是实现PV操作的关键一步，工作流程图越准确，最后的算法就越容易实现。
+第四步根据流程图转化PV操作并给信号量赋初值，如果前面的步骤都非常详细准确，则这步主要是看个人的编程基础，用不同的语言实现都可以，最好是用自己掌握较好的一门语言。
+下面就一些典型例子做分析，在分析中理解“四步法”在进程同步中的实际运用：
+（1）用PV原语实现进程的互斥。
+    以下例子说明进程的互斥实现：哲学家进餐问题
+有四位哲学家围着一个圆桌在思考和进餐，每人思考时手中什么都不拿，当需要进餐时，每人需要用刀和叉各一把，餐桌上的布置如图所示，共有两把刀和两把叉，每把刀或叉供相邻的两个人使用。请用信号量及PV操作说明四位哲学家的同步过程。
+ 
+ 
+ 
+ 
+ 
+第一步确定进程的个数及其工作内容。本例子涉及四个进程，每个哲学家为一个进程。因相邻的两个哲学家要竞争刀或叉，刀或叉就成为了临界资源，所以属于互斥关系。
+第二步确定互斥信号量的个数、含义及PV操作。设置4个互斥信号量fork1,fork2,knife1,knife2,其初值均为“1”，分别表示叉1，叉2，刀1，刀2是可用的。
+第三步画工作流程图。一般情况下，互斥问题中进程的工作流程基本相同，所以只要画出其中一个进程的流程图即可。
+第四步根据流程图写出相应算法。用类C语言描述互斥关系，互斥描述如下：
+ 
+
+ 
+ 
+判断进程间是否互斥，关键是看进程间是否共享某一公有资源，一个公有资源与一个信号量相对应。确定信号量的值是一个关键点，它代表了可用资源实体数。
+（2）用PV原语实现进程的同步。与进程互斥不同，进程同步时的信号量只与制约进程及被制约进程有关而不是与整组并发进程有关，所以称该信号量为私有信号量。利用PV原语实现进程同步的方法是：首先判断进程间的关系为同步的，且为各并发进程设置私有信号量，然后为私有信号量赋初值，最后利用PV原语和私有信号量规定各进程的执行顺序。      
+另外一个问题就是P原语是不是一定在V原语的前面，回答是否定的。下面看一个例子：
+例2：设在公共汽车上，司机和售票员的活动分别是：司机：启动车辆，正常行车，到站停车。售票员：上乘客，关车门，售票，开车门，下乘客。用PV操作对其控制。
+分析：
+第一步：确定进程间的关系。司机到站停车后，售票员方可工作。同样，售票员关车门后，司机才能工作。所以司机与售票员之间是一种同步关系。
+第二步：确定信号量及其值。由于司机与售票员之间要互通消息，司机进程设置一个私有信号量S1，用于判断司机能否进行工作，初值为0。售票员进程设置一个私有信号量S2，用于判断是否停车，售票员是否能够开车门，初值为0。
+第三步：画出工作流程图。此题流程图就不一致（在算法中体现）。
+第四步：根据流程图写出相应算法。
+实现：
+ 
+
+ 
+ 
+（3）用PV原语实现进程同步与互斥的混合问题。有了上面的分析后，下面来考虑进程同步与互斥的混合问题就不难了。混合问题当中只要分清哪些是互斥信号量，哪些是共享信号量，其它的照四步法做即可，在这儿不详述。 
+时间:Oct 18, 2012 4:27:00 PM   
+
+原作者----------录入者:冯春苑    
+
+
+
+
+
+
 
 
 
@@ -471,7 +514,7 @@ ll <span class="token function">C</span><span class="token punctuation">(</span>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://itwufeng.github.io/2022/09/01/%E7%BB%84%E5%90%88%E6%95%B0-%E7%AE%97%E6%B3%95/">http://itwufeng.github.io/2022/09/01/%E7%BB%84%E5%90%88%E6%95%B0-%E7%AE%97%E6%B3%95/</a>
+                    <a href="http://itwufeng.github.io/2022/09/25/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9Fpv%E6%93%8D%E4%BD%9C/">http://itwufeng.github.io/2022/09/25/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9Fpv%E6%93%8D%E4%BD%9C/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -509,12 +552,12 @@ ll <span class="token function">C</span><span class="token punctuation">(</span>
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">算法</span>
+                                <a href="/tags/PV%E6%93%8D%E4%BD%9C/">
+                                    <span class="chip bg-color">PV操作</span>
                                 </a>
                             
-                                <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0/">
-                                    <span class="chip bg-color">组合数</span>
+                                <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                                    <span class="chip bg-color">操作系统</span>
                                 </a>
                             
                         </div>
@@ -593,86 +636,35 @@ ll <span class="token function">C</span><span class="token punctuation">(</span>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/09/01/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">
+                <a href="/2022/09/25/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9Fpv%E6%93%8D%E4%BD%9C/">
                     <div class="card-image">
                         
-                        <img src="/medias/banner/0.jpg" class="responsive-img" alt="多种排序算法">
+                        <img src="/medias/banner/3.jpg" class="responsive-img" alt="PV操作">
                         
-                        <span class="card-title">多种排序算法</span>
+                        <span class="card-title">PV操作</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            排序算法
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-01
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">排序算法</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/09/01/%E7%BB%84%E5%90%88%E6%95%B0-%E7%AE%97%E6%B3%95/">
-                    <div class="card-image">
-                        
-                        <img src="/medias/banner/3.jpg" class="responsive-img" alt="时间复杂度最小的 组合数求法">
-                        
-                        <span class="card-title">时间复杂度最小的 组合数求法</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            求组合数算法
+                            PV操作
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-25
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
+                            <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="post-category">
+                                    操作系统
                                 </a>
                             
                             
@@ -683,12 +675,64 @@ ll <span class="token function">C</span><span class="token punctuation">(</span>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/PV%E6%93%8D%E4%BD%9C/">
+                        <span class="chip bg-color">PV操作</span>
                     </a>
                     
-                    <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0/">
-                        <span class="chip bg-color">组合数</span>
+                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">操作系统</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/09/07/%E8%B4%AA%E5%90%83%E8%9B%87/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/banner/6.jpg" class="responsive-img" alt="贪吃蛇">
+                        
+                        <span class="card-title">贪吃蛇</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            js写贪吃蛇
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-07
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%B8%B8%E6%88%8F/" class="post-category">
+                                    游戏
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%B8%B8%E6%88%8F/">
+                        <span class="chip bg-color">游戏</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%B4%AA%E5%90%83%E8%9B%87/">
+                        <span class="chip bg-color">贪吃蛇</span>
                     </a>
                     
                 </div>
